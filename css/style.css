@@ -1,10 +1,7 @@
-
-.carousel {
-    max-height: 500px; /* Adjust the height as per your requirement */
-}
+/* 
 
 .carousel-caption {
-    top: 0px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -22,7 +19,7 @@
         font-size: 30px;
         font-weight: 600 !important;
     }
-}
+} */
 
 .page-header {
     height: 300px;
@@ -147,4 +144,26 @@
     left: -40px;
     background: var(--primary);
     transform: skew(40deg);
+}
+
+#pre-loader {
+    display: none;
+}
+
+
+#pre-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#pre-loader img {
+    max-width: 100%; /* Adjust the size of your preloader GIF */
 }
