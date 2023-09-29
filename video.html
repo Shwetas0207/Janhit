@@ -129,7 +129,7 @@
     <!-- ####################################################   -->
     <div class="video-container">
         <div class="video-card" onclick="showVideoPopup('video.mp4', 'Video Title 1')">
-            <img src="img/logo.jpeg" alt="Video Thumbnail">
+            <img src="img/logo1.png" alt="Video Thumbnail">
             <div class="card-content">
                 <h2>Video Title 1</h2>
                 <p>Description for Video 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -169,7 +169,7 @@
         </video>
         <h2 id="popupTitle">Video Title</h2>
     </div>
-    
+
     <style>
 /* Reset some default styles for better consistency */
 * {
@@ -191,16 +191,15 @@ body {
 /* Video Container Styles */
 .video-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 20px auto;
 }
 
 /* Video Card Styles */
 .video-card {
-    flex: 0 0 calc(25% - 20px); /* Adjust the width as needed */
+    flex: 0 0 calc(25% - 20px); 
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -209,6 +208,13 @@ body {
     cursor: pointer;
     transition: transform 0.2s;
     position: relative;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .video-card {
+        flex: 0 0 calc(100% - 20px); /* One card per row on smaller screens */
+    }
 }
 
 .video-card:hover {
@@ -274,6 +280,13 @@ body {
 #popupTitle {
     font-size: 24px;
     margin-top: 10px;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .video-popup {
+        width: 90%; /* Adjust the width as needed for smaller screens */
+    }
 }
 
 
