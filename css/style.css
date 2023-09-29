@@ -1,4 +1,8 @@
 
+.carousel {
+    max-height: 500px; /* Adjust the height as per your requirement */
+}
+
 .carousel-caption {
     top: 0px;
     left: 0;
