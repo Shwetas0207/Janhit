@@ -129,20 +129,37 @@
     <!-- ####################################################   -->
     <div class="video-container">
         <div class="video-card" onclick="showVideoPopup('video.mp4', 'Video Title 1')">
+            <img src="img/logo.jpeg" alt="Video Thumbnail">
             <div class="card-content">
                 <h2>Video Title 1</h2>
                 <p>Description for Video 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
 
-        <div class="video-card" onclick="showVideoPopup('video2.mp4', 'Video Title 2')">
+        <div class="video-card" onclick="showVideoPopup('video.mp4', 'Video Title 2')">
+            <img src="img/logo.jpeg" alt="Video Thumbnail">
             <div class="card-content">
                 <h2>Video Title 2</h2>
                 <p>Description for Video 2 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
+
+        <div class="video-card" onclick="showVideoPopup('video.mp4', 'Video Title 3')">
+            <img src="img/logo.jpeg" alt="Video Thumbnail">
+            <div class="card-content">
+                <h2>Video Title 3</h2>
+                <p>Description for Video 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <div class="video-card" onclick="showVideoPopup('video.mp4', 'Video Title 4')">
+            <img src="img/logo.jpeg" alt="Video Thumbnail">
+            <div class="card-content">
+                <h2>Video Title 4</h2>
+                <p>Description for Video 4 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
     </div>
-    
 
     <!-- Video Pop-up Container -->
     <div class="video-popup" id="videoPopup">
@@ -152,8 +169,9 @@
         </video>
         <h2 id="popupTitle">Video Title</h2>
     </div>
+    
     <style>
-        /* Reset some default styles for better consistency */
+/* Reset some default styles for better consistency */
 * {
     margin: 0;
     padding: 0;
@@ -170,31 +188,53 @@ body {
     min-height: 100vh;
 }
 
+/* Video Container Styles */
+.video-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Video Card Styles */
 .video-card {
-    max-width: 400px;
+    flex: 0 0 calc(25% - 20px); /* Adjust the width as needed */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 20px;
+    margin-bottom: 20px;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
 }
 
-video {
+.video-card:hover {
+    transform: scale(1.05); /* Add a hover effect */
+}
+
+/* Video Thumbnail Styles */
+.video-card img {
     width: 100%;
     height: auto;
     display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.card-content {
+/* Video Card Content Styles */
+.video-card .card-content {
     padding: 20px;
 }
 
-h2 {
+.video-card h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-p {
+.video-card p {
     font-size: 14px;
     color: #666;
 }
@@ -235,32 +275,6 @@ p {
     font-size: 24px;
     margin-top: 10px;
 }
-/* Your existing styles here */
-
-/* Video Container Styles */
-.video-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* Video Card Styles */
-.video-card {
-    flex: 0 0 calc(50% - 20px); /* Adjust the width as needed */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.video-card:hover {
-    transform: scale(1.05); /* Add a hover effect */
-}
-
 
 
     </style>
