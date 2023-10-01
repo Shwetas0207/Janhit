@@ -74,9 +74,144 @@
                 </div>
             </div>
         </nav>
-    </div><br><br><br>
+    </div><br>
     <!-- Navbar End -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+    <h1 class="display-3 text-uppercase text-white mb-3">Join the janhit dal</h1>
+</div>
+</div>
+<!-- Page Header Start -->
 
+
+<br>
+
+<!---join the janhit dal started-->
+
+    <div class="container">
+        <form action="action_page.php" method="post" name="google-sheet">
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+                <label for="gender">Gender</label>
+            </div>
+            <div class="col-75">
+                <select id="gender" name="gender">
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="row">
+
+        </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="about">About</label>
+            </div>
+            <div class="col-75">
+              <textarea id="about" name="about" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+
+      
+      <style>
+
+        /* Style inputs, select elements and textareas */
+        .container {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        select {
+            appearance: none; /* Remove default select styling */
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #f27908;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e36d29;
+        }
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+      </style>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw_9TPTpc63Vhtzamr0pNkNPk6ebYmFZ1s1yTbmc-LlzjmTL1eoqFTEDhdje2mdgBeL/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+<!--join the janhit dal End-->
+
+<br><br>
 
      <!-- Footer Start -->
      <!-- Footer Start -->
