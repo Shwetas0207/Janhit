@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    line-height: 1.5;
+}
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+    </style>
+</head>
+<body>        
+    <div class = "card-wrapper">
+        <div class = "card">
+          <!-- card left -->
+          <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <img src = "img/logo.jpeg" alt = "shoe image">
+                <img src = "img/logo.jpeg" alt = "shoe image">
+                <img src = "img/logo.jpeg" alt = "shoe image">
+                <img src = "img/logo.jpeg" alt = "shoe image">
+              </div>
+            </div>
+            <div class = "img-select">
+            </div>
+          </div>
+          <!-- card right -->
+          <div class = "product-content">
+            <h5 class = "product-title">Shahid Bhagat Singh Ji</h5>
+            
+            <div class = "product-detail">
+              <h2>about this item: </h2>
+              <p>Shaheed Bhagat Singh was a prominent Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule. His ideology and principles were deeply rooted in his love for the nation and his desire to free it from foreign oppression. Here are some key aspects of Bhagat Singh's ideology:
+
+                <br><br><b>Patriotism:</b> Bhagat Singh's unwavering love for his country was at the core of his ideology. He believed in the importance of selfless service to the motherland and was willing to sacrifice his life for its freedom.
+                
+                <br><b>Non-Violent Resistance:</b> While Bhagat Singh is often associated with acts of violence against British officials, he initially believed in non-violent resistance. However, the Jallianwala Bagh massacre and other acts of British brutality changed his perspective, leading him to embrace more radical methods to achieve freedom.
+                
+                <br><b>Socialism:</b> Bhagat Singh was deeply influenced by socialist and Marxist ideologies. He believed that India's independence should lead to the establishment of a just and equitable society, free from exploitation and inequality.
+                
+                <br><b>Secularism:</b> He stood for a secular India where people of all religions and backgrounds would have equal rights and opportunities. His vision of India was inclusive and pluralistic.
+                
+                <br><b>Equality and Social Justice:</b> Bhagat Singh advocated for the upliftment of the downtrodden and the eradication of caste-based discrimination. He believed in a society where every individual would be treated with dignity and respect.
+                
+                <br><b>Revolutionary Spirit:</b> Bhagat Singh believed that revolutionary actions were necessary to shake the British Raj and inspire the masses to rise against colonial rule. His daring acts, such as the bombing of the Central Legislative Assembly in Delhi, were aimed at awakening the Indian population.
+                
+                Youth Empowerment: He believed that the youth of India had a crucial role to play in the freedom struggle. He sought to inspire and mobilize young people to take an active part in the fight for independence.
+                
+                Intellectual Stimulation: Bhagat Singh was an avid reader and writer. He believed in the power of knowledge and intellect to bring about change. He wrote extensively on various social and political issues.
+                
+                Sacrifice: Bhagat Singh was willing to make the ultimate sacrifice for his beliefs. He willingly faced the gallows at a young age, not for personal gain but for the cause of India's freedom.
+                
+                Inspiration: Even after his execution, Bhagat Singh's life and sacrifice continued to inspire generations of Indians and freedom fighters around the world. He remains an enduring symbol of courage, sacrifice, and patriotism.
+                
+                Bhagat Singh's ideology and actions left an indelible mark on the Indian independence movement. His legacy continues to inspire people to fight for justice, equality, and freedom from oppression.
+                
+                
+                </p>
+                      
+            </div>
+          </div>
+        </div>
+    </div>
+  <script>
+    const imgs = document.querySelectorAll('.img-select a');
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        imgId = imgItem.dataset.id;
+        slideImage();
+    });
+});
+
+function slideImage(){
+    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+}
+
+window.addEventListener('resize', slideImage);
+
+  </script>
+  
+  </body>
+</html>
