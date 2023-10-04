@@ -1,237 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-    <style>
-       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+    <meta charset="utf-8">
+    <title>janhit dal</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-}
-body{
-    line-height: 1.5;
-}
-.card-wrapper{
-    max-width: 1100px;
-    margin: 0 auto;
-}
-img{
-    width: 100%;
-    display: block;
-}
-.img-display{
-    overflow: hidden;
-}
-.img-showcase{
-    display: flex;
-    width: 100%;
-    transition: all 0.5s ease;
-}
-.img-showcase img{
-    min-width: 100%;
-}
-.img-select{
-    display: flex;
-}
-.img-item{
-    margin: 0.3rem;
-}
-.img-item:nth-child(1),
-.img-item:nth-child(2),
-.img-item:nth-child(3){
-    margin-right: 0;
-}
-.img-item:hover{
-    opacity: 0.8;
-}
-.product-content{
-    padding: 2rem 1rem;
-}
-.product-title{
-    font-size: 3rem;
-    text-transform: capitalize;
-    font-weight: 700;
-    position: relative;
-    color: #12263a;
-    margin: 1rem 0;
-}
-.product-title::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 80px;
-    background: #12263a;
-}
-.product-link{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background: #256eff;
-    color: #fff;
-    padding: 0 0.3rem;
-    transition: all 0.5s ease;
-}
-.product-link:hover{
-    opacity: 0.9;
-}
-.product-rating{
-    color: #ffc107;
-}
-.product-rating span{
-    font-weight: 600;
-    color: #252525;
-}
-.product-price{
-    margin: 1rem 0;
-    font-size: 1rem;
-    font-weight: 700;
-}
-.product-price span{
-    font-weight: 400;
-}
-.last-price span{
-    color: #f64749;
-    text-decoration: line-through;
-}
-.new-price span{
-    color: #256eff;
-}
-.product-detail h2{
-    text-transform: capitalize;
-    color: #12263a;
-    padding-bottom: 0.6rem;
-}
-.product-detail p{
-    font-size: 0.9rem;
-    padding: 0.3rem;
-    opacity: 0.8;
-}
-.product-detail ul{
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-.product-detail ul li{
-    margin: 0;
-    list-style: none;
-    background: url(shoes_images/checked.png) left center no-repeat;
-    background-size: 18px;
-    padding-left: 1.7rem;
-    margin: 0.4rem 0;
-    font-weight: 600;
-    opacity: 0.9;
-}
-.product-detail ul li span{
-    font-weight: 400;
-}
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-@media screen and (min-width: 992px){
-    .card{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem;
-    }
-    .card-wrapper{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .product-imgs{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .product-content{
-        padding-top: 0;
-    }
-}
-    </style>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body>        
-    <div class = "card-wrapper">
-        <div class = "card">
-          <!-- card left -->
-          <div class = "product-imgs">
-            <div class = "img-display">
-              <div class = "img-showcase">
-                <img src = "img/logo.jpeg" alt = "shoe image">
-                <img src = "img/logo.jpeg" alt = "shoe image">
-                <img src = "img/logo.jpeg" alt = "shoe image">
-                <img src = "img/logo.jpeg" alt = "shoe image">
-              </div>
-            </div>
-            <div class = "img-select">
-            </div>
-          </div>
-          <!-- card right -->
-          <div class = "product-content">
-            <h5 class = "product-title">Shahid Bhagat Singh Ji</h5>
-            
-            <div class = "product-detail">
-              <h2>about this item: </h2>
-              <p>Shaheed Bhagat Singh was a prominent Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule. His ideology and principles were deeply rooted in his love for the nation and his desire to free it from foreign oppression. Here are some key aspects of Bhagat Singh's ideology:
 
-                <br><br><b>Patriotism:</b> Bhagat Singh's unwavering love for his country was at the core of his ideology. He believed in the importance of selfless service to the motherland and was willing to sacrifice his life for its freedom.
-                
-                <br><b>Non-Violent Resistance:</b> While Bhagat Singh is often associated with acts of violence against British officials, he initially believed in non-violent resistance. However, the Jallianwala Bagh massacre and other acts of British brutality changed his perspective, leading him to embrace more radical methods to achieve freedom.
-                
-                <br><b>Socialism:</b> Bhagat Singh was deeply influenced by socialist and Marxist ideologies. He believed that India's independence should lead to the establishment of a just and equitable society, free from exploitation and inequality.
-                
-                <br><b>Secularism:</b> He stood for a secular India where people of all religions and backgrounds would have equal rights and opportunities. His vision of India was inclusive and pluralistic.
-                
-                <br><b>Equality and Social Justice:</b> Bhagat Singh advocated for the upliftment of the downtrodden and the eradication of caste-based discrimination. He believed in a society where every individual would be treated with dignity and respect.
-                
-                <br><b>Revolutionary Spirit:</b> Bhagat Singh believed that revolutionary actions were necessary to shake the British Raj and inspire the masses to rise against colonial rule. His daring acts, such as the bombing of the Central Legislative Assembly in Delhi, were aimed at awakening the Indian population.
-                
-                Youth Empowerment: He believed that the youth of India had a crucial role to play in the freedom struggle. He sought to inspire and mobilize young people to take an active part in the fight for independence.
-                
-                Intellectual Stimulation: Bhagat Singh was an avid reader and writer. He believed in the power of knowledge and intellect to bring about change. He wrote extensively on various social and political issues.
-                
-                Sacrifice: Bhagat Singh was willing to make the ultimate sacrifice for his beliefs. He willingly faced the gallows at a young age, not for personal gain but for the cause of India's freedom.
-                
-                Inspiration: Even after his execution, Bhagat Singh's life and sacrifice continued to inspire generations of Indians and freedom fighters around the world. He remains an enduring symbol of courage, sacrifice, and patriotism.
-                
-                Bhagat Singh's ideology and actions left an indelible mark on the Indian independence movement. His legacy continues to inspire people to fight for justice, equality, and freedom from oppression.
-                
-                
-                </p>
-                      
+<body>
+
+
+    <!-- Navbar Start -->
+   
+    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <a href="index.html">
+                    <h6 class="m-0 display-6 text-uppercase text-white">
+                        <img src="img/logo1.png" alt="WEBUILD Logo" width="100" height="100">
+                        janhit dal
+                    </h6>
+            
+                </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">for Voter</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="vision.html" class="dropdown-item">Vision</a>
+                            <a href="project.html" class="dropdown-item">Project</a>
+                            <a href="schemes.html" class="dropdown-item">Schemes</a>
+                            <a href="mission.html" class="dropdown-item">Mission</a>
+                           </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Media</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="press.html" class="dropdown-item">Press Releases</a>
+                            <a href="gallary.html" class="dropdown-item">Photo Gallery</a>
+                            <a href="video.html" class="dropdown-item">Video Gallery</a>
+                        </div>
+                    </div>
+
+                    
+                    <a href="team.html" class="nav-item nav-link">Team</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="Join.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Join Janhita Dal </a>
+                    <a href="donation.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Donation</a>
+                </div>
             </div>
-          </div>
+        </nav>
+    </div>    <!-- Navbar End -->
+
+
+    <div class="container">
+        <div class="product-image">
+            <img src="img/logo.jpeg" alt="Shaheed Bhagat Singh" width="300" height="400">
+        </div>
+    
+        <div class="product-details">
+            <h2>Description</h2>
+            <p>Shaheed Bhagat Singh was a prominent Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule.</p>
+    
+            <h2>Key Aspects of Bhagat Singh's Ideology</h2>
+            <ul>
+                <li>Patriotism: Bhagat Singh's unwavering love for his country was at the core of his ideology.</li>
+                <li>Non-Violent Resistance: He initially believed in non-violent resistance but turned to more radical methods due to British brutality.</li>
+                <li>Socialism: He believed in a just and equitable society free from exploitation and inequality.</li>
+                <li>Secularism: He stood for a secular India with equal rights for all.</li>
+                <li>Equality and Social Justice: He advocated for the upliftment of the downtrodden and eradication of caste-based discrimination.</li>
+                <li>Revolutionary Spirit: Bhagat Singh believed in revolutionary actions to awaken the Indian population.</li>
+                <li>Youth Empowerment: He sought to inspire and mobilize young people in the freedom struggle.</li>
+                <li>Intellectual Stimulation: Bhagat Singh believed in the power of knowledge and intellect to bring about change.</li>
+                <li>Sacrifice: He willingly faced the gallows for the cause of India's freedom.</li>
+                <li>Inspiration: His life and sacrifice continue to inspire generations.</li>
+            </ul>
         </div>
     </div>
-  <script>
-    const imgs = document.querySelectorAll('.img-select a');
-const imgBtns = [...imgs];
-let imgId = 1;
-
-imgBtns.forEach((imgItem) => {
-    imgItem.addEventListener('click', (event) => {
-        event.preventDefault();
-        imgId = imgItem.dataset.id;
-        slideImage();
-    });
-});
-
-function slideImage(){
-    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-
-    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+    <br><br>
+    <style>
+/* Style the product container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-window.addEventListener('resize', slideImage);
+/* Style the product image */
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-  </script>
-  
-  </body>
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Style the product description */
+.product-details {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.product-details h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 16px;
+    color: #666;
+}
+
+.product-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.product-details li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Add some spacing */
+.product-details h2:first-child {
+    margin-top: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+    </style>
+
+
+
+
+    <!-- Footer Start -->
+<footer class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+    <div class="row g-5">
+        <div class="col-lg-3">
+            <!-- Logo and Company Name -->
+            <div class="footer-logo">
+                <img src="img/logo1.png" alt="Company Logo">
+                <h1 class="m-0 display-4 text-uppercase text-white">JANHIT DAL</h1>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
+                <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <!-- Quick Links -->
+            <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
+                <a class="text-white-50" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <!-- Social Media Links -->
+            <h4 class="text-white text-uppercase mb-4">Connect with Us</h4>
+            <div class="social-media-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Notice -->
+      <hr>
+    <div class="row">
+        <div class="col-12 text-center">
+            <!-- <img src="img/logo1.png" alt="Company Logo"> -->
+            <p class="mb-0"> JANHIT DAL India|&copy;2023.</p>
+        </div>
+    </div>
+</footer>
+
+
+<style>
+/* Your existing styles here */
+
+/* Footer Styles */
+footer {
+    background-color: #e36d29; /* Dark background color */
+    color: #d59f33; /* Text color */
+}
+
+/* Footer Logo Styles */
+.footer-logo img {
+    max-width: 100px; /* Adjust the logo width as needed */
+}
+
+.footer-logo h1 {
+    font-size: 24px;
+    margin-top: 10px;
+
+}
+
+/* Footer Contact Styles */
+.footer-contact p {
+    margin-bottom: 5px;
+}
+
+/* Footer Quick Links Styles */
+.footer a {
+    color: #adb5bd; /* Link text color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffffff; /* Hover link text color */
+}
+
+/* Social Media Links Styles */
+.social-media-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+    color: #007bff; /* Hover link color */
+}
+
+
+</style>
+<!-- Footer End -->
+
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
 </html>
