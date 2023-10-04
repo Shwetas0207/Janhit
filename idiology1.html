@@ -34,7 +34,6 @@
 <body>
 
 
-
     <!-- Navbar Start -->
    
     <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
@@ -84,151 +83,113 @@
         </nav>
     </div>    <!-- Navbar End -->
 
+
     <div class="container">
-        <h1>IDEOLOGY</h1>
-        <div class="product-grid" id="productGrid">
-            <!-- Product items will be inserted here using JavaScript -->
+        <div class="product-image">
+            <h1>Shaheed Bhagat Singh</h1>
+            <img src="img/logo.jpeg" alt="Shaheed Bhagat Singh" width="300" height="400">
+        </div>
+    
+        <div class="product-details">
+            <h2>Description</h2>
+            <p>Shaheed Bhagat Singh was a prominent Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule.</p>
+    
+            <h2>Key Aspects of Bhagat Singh's Ideology</h2>
+            <ul>
+                <li>Patriotism: Bhagat Singh's unwavering love for his country was at the core of his ideology.</li>
+                <li>Non-Violent Resistance: He initially believed in non-violent resistance but turned to more radical methods due to British brutality.</li>
+                <li>Socialism: He believed in a just and equitable society free from exploitation and inequality.</li>
+                <li>Secularism: He stood for a secular India with equal rights for all.</li>
+                <li>Equality and Social Justice: He advocated for the upliftment of the downtrodden and eradication of caste-based discrimination.</li>
+                <li>Revolutionary Spirit: Bhagat Singh believed in revolutionary actions to awaken the Indian population.</li>
+                <li>Youth Empowerment: He sought to inspire and mobilize young people in the freedom struggle.</li>
+                <li>Intellectual Stimulation: Bhagat Singh believed in the power of knowledge and intellect to bring about change.</li>
+                <li>Sacrifice: He willingly faced the gallows for the cause of India's freedom.</li>
+                <li>Inspiration: His life and sacrifice continue to inspire generations.</li>
+            </ul>
         </div>
     </div>
-<style>
-/* Apply styles to the container */
+    <br><br>
+    <style>
+/* Style the product container */
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
     padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the product grid */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Display three products in one row */
-    gap: 20px;
-}
-
-/* Style individual product items */
 /* Style the product image */
-.product-item img {
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect for the product image */
-.product-item:hover img {
-    transform: scale(1.1); /* Increase the image size on hover */
+.product-image img:hover {
+    transform: scale(1.1);
 }
 
-/* Additional styles for the pop-up */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Style the product description */
+.product-details {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.product-details h2 {
+    font-size: 24px;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.popup img {
-    max-width: 90%;
-    max-height: 90%;
+.product-details p {
+    font-size: 16px;
+    color: #666;
 }
 
-.product-item h2 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-.product-item p {
-    font-size: 14px;
-    color: #777;
+.product-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
+.product-details li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Add some spacing */
+.product-details h2:first-child {
+    margin-top: 0;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(1, 1fr); /* Display one product per row on smaller screens */
+    .container {
+        padding: 10px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
-</style>
-<script>
-// Sample product data (you can replace this with your own data)
-const products = [
-    {
-        name: 'Product 1',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$19.99',
-        link: 'product1.html'
-    },
-    {
-        name: 'Product 2',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$24.99',
-        link: 'product2.html'
-    },
-    {
-        name: 'Product 3',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    },
-    {
-        name: 'Product 4',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    },
-    {
-        name: 'Product 5',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    }
-];
 
-// Function to create product elements and add them to the grid
-function createProductElements() {
-    const productGrid = document.getElementById('productGrid');
-
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('product-item');
-
-        // Create an anchor element around the product image
-        const productLink = document.createElement('a');
-        productLink.href = product.link;
-        productLink.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
-
-        productItem.appendChild(productLink);
-        productItem.innerHTML += `
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <p>Price: ${product.price}</p>
-            
-        `;
-
-        productGrid.appendChild(productItem);
-    });
-}
-
-// Call the function to create product elements
-createProductElements();
-
-</script>
-
-<br><br>
-     <!-- Footer Start -->
+    </style>
+<br>
+    <!-- Footer Start -->
 <footer class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
     <div class="row g-5">
         <div class="col-lg-3">
@@ -332,9 +293,11 @@ footer {
 </style>
 <!-- Footer End -->
 
+    <!-- Footer End -->
+
 
     <!-- Back to Top -->
-    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
