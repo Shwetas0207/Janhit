@@ -25,7 +25,6 @@ async def contact_form(json_data: dict):
 
 
 
-
 @router.post('/join')
 async def join(mod:Join):
     a=['male','female','others']
