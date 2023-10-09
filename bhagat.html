@@ -37,6 +37,7 @@
 
     <!-- Navbar Start -->
    
+    
     <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
         <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
             <a href="index.html" class="navbar-brand">
@@ -44,8 +45,7 @@
                     <h6 class="m-0 display-6 text-uppercase text-white">
                         <img src="img/logo1.png" alt="WEBUILD Logo" width="100" height="100">
                         janhit dal
-                    </h6>
-            
+                    </h6> 
                 </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -54,8 +54,15 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="press.html" class="dropdown-item">Histroy</a>
+                            <a href="idio.html" class="dropdown-item">Idiology </a>
+                            <!-- <a href="video.html" class="dropdown-item">Video Gallery</a> -->
+                        </div>
+                    </div>
+                        <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">for Voter</a>
                         <div class="dropdown-menu m-0">
                             <a href="vision.html" class="dropdown-item">Vision</a>
@@ -73,173 +80,130 @@
                             <a href="video.html" class="dropdown-item">Video Gallery</a>
                         </div>
                     </div>
-
                     
                     <a href="team.html" class="nav-item nav-link">Team</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a> 
                     <a href="Join.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Join Janhita Dal </a>
                     <a href="donation.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Donation</a>
                 </div>
             </div>
         </nav>
-    </div>    <!-- Navbar End -->
+    </div>   <!-- Navbar End -->
 
     <div class="container">
-        <h1>IDEOLOGY</h1>
-        <div class="product-grid" id="productGrid">
-            <!-- Product items will be inserted here using JavaScript -->
+        <div class="product-image">
+            <h1>Shahid Bhagat Singh Ji</h1>
+            <img src="img/bhagat.jpeg" alt="Bhimrao Ramji Ambedkar" width="300" height="400">
+        </div>
+    
+        <div class="product-details">
+            <h2>Description</h2>
+            <p>Shaheed Bhagat Singh was a prominent Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule. His ideology and principles were deeply rooted in his love for the nation and his desire to free it from foreign oppression. Here are some key aspects of Bhagat Singh's ideology:
+            </p>
+    
+            <h2>Key Aspects of Shahid Bhagat Singh Ji</h2>
+            <ul>
+                <li>Patriotism: Bhagat Singh's unwavering love for his country was at the core of his ideology. He believed in the importance of selfless service to the motherland and was willing to sacrifice his life for its freedom.
+                </li>
+                <li>Non-Violent Resistance: While Bhagat Singh is often associated with acts of violence against British officials, he initially believed in non-violent resistance. However, the Jallianwala Bagh massacre and other acts of British brutality changed his perspective, leading him to embrace more radical methods to achieve freedom.
+                </li>
+                <li>Socialism: Bhagat Singh was deeply influenced by socialist and Marxist ideologies. He believed that India's independence should lead to the establishment of a just and equitable society, free from exploitation and inequality.
+                </li>
+                <li>Secularism: He stood for a secular India where people of all religions and backgrounds would have equal rights and opportunities. His vision of India was inclusive and pluralistic.
+                </li>
+                <li>Equality and Social Justice: Bhagat Singh advocated for the upliftment of the downtrodden and the eradication of caste-based discrimination. He believed in a society where every individual would be treated with dignity and respect.</li>
+                <li>Revolutionary Spirit: Bhagat Singh believed that revolutionary actions were necessary to shake the British Raj and inspire the masses to rise against colonial rule. His daring acts, such as the bombing of the Central Legislative Assembly in Delhi, were aimed at awakening the Indian population.</li>
+                
+                <li>Youth Empowerment: He believed that the youth of India had a crucial role to play in the freedom struggle. He sought to inspire and mobilize young people to take an active part in the fight for independence.</li>
+                <li>Intellectual Stimulation: Bhagat Singh was an avid reader and writer. He believed in the power of knowledge and intellect to bring about change. He wrote extensively on various social and political issues.</li>
+                <li>Sacrifice: Bhagat Singh was willing to make the ultimate sacrifice for his beliefs. He willingly faced the gallows at a young age, not for personal gain but for the cause of India's freedom.</li>
+                <li>Inspiration: Even after his execution, Bhagat Singh's life and sacrifice continued to inspire generations of Indians and freedom fighters around the world. He remains an enduring symbol of courage, sacrifice, and patriotism.</li>
+                <li>Bhagat Singh's ideology and actions left an indelible mark on the Indian independence movement. His legacy continues to inspire people to fight for justice, equality, and freedom from oppression.</li>
+           
+            </ul>
         </div>
     </div>
-<style>
-/* Apply styles to the container */
+    
+    <br><br>
+    <style>
+/* Style the product container */
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
     padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the product grid */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Display three products in one row */
-    gap: 20px;
-}
-
-/* Style individual product items */
 /* Style the product image */
-.product-item img {
+.product-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect for the product image */
-.product-item:hover img {
-    transform: scale(1.1); /* Increase the image size on hover */
+.product-image img:hover {
+    transform: scale(1.1);
 }
 
-/* Additional styles for the pop-up */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Style the product description */
+.product-details {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.product-details h2 {
+    font-size: 24px;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.popup img {
-    max-width: 90%;
-    max-height: 90%;
+.product-details p {
+    font-size: 16px;
+    color: #666;
 }
 
-.product-item h2 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-.product-item p {
-    font-size: 14px;
-    color: #777;
+.product-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
+.product-details li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Add some spacing */
+.product-details h2:first-child {
+    margin-top: 0;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(1, 1fr); /* Display one product per row on smaller screens */
+    .container {
+        padding: 10px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
-</style>
-<script>
-// Sample product data (you can replace this with your own data)
-const products = [
-    {
-        name: 'Product 1',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$19.99',
-        link: 'product1.html'
-    },
-    {
-        name: 'Product 2',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$24.99',
-        link: 'product2.html'
-    },
-    {
-        name: 'Product 3',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    },
-    {
-        name: 'Product 4',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    },
-    {
-        name: 'Product 5',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$29.99',
-        link: 'product3.html'
-    },
-    {
-        name: 'Product 6',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$19.99',
-        link: 'product1.html'
-    },
-    {
-        name: 'Product 7',
-        image: 'img/logo.jpeg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        price: '$19.99',
-        link: 'product1.html'
-    }
-];
 
-// Function to create product elements and add them to the grid
-function createProductElements() {
-    const productGrid = document.getElementById('productGrid');
+    </style>
 
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('product-item');
-
-        // Create an anchor element around the product image
-        const productLink = document.createElement('a');
-        productLink.href = product.link;
-        productLink.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
-
-        productItem.appendChild(productLink);
-        productItem.innerHTML += `
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <p>Price: ${product.price}</p>
-            
-        `;
-
-        productGrid.appendChild(productItem);
-    });
-}
-
-// Call the function to create product elements
-createProductElements();
-
-</script>
 
 <br><br>
      <!-- Footer Start -->
@@ -255,7 +219,7 @@ createProductElements();
         <div class="col-lg-3">
             <!-- Contact Information -->
             <div class="footer-contact">
-                <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>R-564, Shankar Road, Main Road, Rajendra Nagar, New Delhi 110028</p>
                 <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
             </div>

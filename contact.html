@@ -34,15 +34,15 @@
 <body>
      <!-- Navbar Start -->
     
-    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+    
+     <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
         <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <a href="index.html">
                     <h6 class="m-0 display-6 text-uppercase text-white">
                         <img src="img/logo1.png" alt="WEBUILD Logo" width="100" height="100">
                         janhit dal
-                    </h6>
-            
+                    </h6> 
                 </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -50,9 +50,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="press.html" class="dropdown-item">Histroy</a>
+                            <a href="idio.html" class="dropdown-item">Idiology </a>
+                            <!-- <a href="video.html" class="dropdown-item">Video Gallery</a> -->
+                        </div>
+                    </div>
+                        <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">for Voter</a>
                         <div class="dropdown-menu m-0">
                             <a href="vision.html" class="dropdown-item">Vision</a>
@@ -70,8 +77,9 @@
                             <a href="video.html" class="dropdown-item">Video Gallery</a>
                         </div>
                     </div>
+                    
                     <a href="team.html" class="nav-item nav-link">Team</a>
-                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a> 
                     <a href="Join.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Join Janhita Dal </a>
                     <a href="donation.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Donation</a>
                 </div>
@@ -93,9 +101,9 @@
 <br>
 <div class="container-fluid py-6 px-5">
     <div class="row gx-0 align-items-center justify-content-center">
-        <form method="post" name="google-sheet">
+        <form method="post"  name="google-sheet">
         <div class="col-lg-6 mx-auto">
-            <form class="contact-form bg-light p-5" action="https://formsubmit.co/your@email.com">
+            <form class="contact-form bg-light p-5" action="/contact"> <!-- Update the form action -->
                 <div class="row g-3">
                     <div class="col-12 col-sm-6">
                         <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;" required>
@@ -121,18 +129,18 @@
 </form>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyfatm2jaE4MYfQm2CkPGvcxdQDQN4-LaEYsGiF77vnGs0FXJk4Q-SINN3HSUOEbjPa/exec'
-    const form = document.forms['google-sheet']
-  
+    const scriptURL = '/your-fastapi-endpoint'; // Update this with your actual endpoint
+    const form = document.forms['google-sheet'];
+
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => {
           alert("Thanks for Contacting us..! We Will Contact You Soon...");
           form.reset(); // Reset the form
         })
-        .catch(error => console.error('Error!', error.message))
-    })
+        .catch(error => console.error('Error!', error.message));
+    });
 </script>
 
 
@@ -152,7 +160,7 @@
         <div class="col-lg-3">
             <!-- Contact Information -->
             <div class="footer-contact">
-                <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>R-564, Shankar Road, Main Road, Rajendra Nagar, New Delhi 110028</p>
                 <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
             </div>
@@ -174,8 +182,6 @@
                 <a href="#"><i class="fab fa-telegram"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
-
-
             </div>
         </div>
     </div>
@@ -247,8 +253,6 @@ footer {
 
 </style>
 <!-- Footer End -->
-
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
