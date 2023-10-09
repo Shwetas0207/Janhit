@@ -9,19 +9,18 @@ from fastapi import FastAPI, APIRouter
 router = APIRouter()
 
 
-
-@router.post('/contact')
-async def cont(mod:Contact):
-    a=contactdb.find_one({"Email":mod.email})
+@router.post("/contact", response_model=dict)
+async def contact_form(json_data: dict):  
+    contact = Contact(**json_data)
+    a = contactdb.find_one({"Email": contact.email})  
     if a:
-        return JSONResponse({'error':'Same email'},status_code=400)
-    data={'Name':mod.name,
-          'Email':mod.email,
-          'Phone':mod.phone,
-          'Message':mod.message}
+        return JSONResponse({'error': 'Same email'}, status_code=400)
+    data = {'Name': contact.name,  # Use contact.name, contact.email, etc.
+            'Email': contact.email,
+            'Phone': contact.phone,
+            'Message': contact.message}
     contactdb.insert_one(data)
-    return JSONResponse({'mess':'Conatact Saved'},status_code=200)
-
+    return JSONResponse({'mess': 'Contact Saved'}, status_code=200)
 
 
 

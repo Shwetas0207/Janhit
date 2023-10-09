@@ -20,9 +20,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -101,45 +101,69 @@
 <br>
 <div class="container-fluid py-6 px-5">
     <div class="row gx-0 align-items-center justify-content-center">
-        <form method="post"  name="google-sheet">
-        <div class="col-lg-6 mx-auto">
-            <form class="contact-form bg-light p-5" action="/contact"> <!-- Update the form action -->
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6">
-                        <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;" required>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;" required>
-                    </div>
-                    <div class="col-12">
-                        <input type="tel" class="form-control border-0" name="phone" placeholder="Mobile No." style="height: 55px;" required>
-                    </div>
-                    <div class="col-12">
-                        <textarea class="form-control border-0" name="message" rows="4" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                    </div>
+        <!-- <form class="contact-form bg-light p-5" id="contact-form"> -->
+        <!-- <form class="contact-form bg-light p-5" id="contact-form" action="/user/contact" method="POST"> -->
+            <form class="contact-form bg-light p-5" id="contact-form" action="http://localhost:8000/user/contact" method="POST">
+
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;" required>
                 </div>
-            </form>
-        </div>
+                <div class="col-12 col-sm-6">
+                    <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;" required>
+                </div>
+                <div class="col-12">
+                    <input type="tel" class="form-control border-0" name="phone" placeholder="Mobile No." style="height: 55px;" required>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control border-0" name="message" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
-</form>
-
 <script>
-    const scriptURL = '/your-fastapi-endpoint'; // Update this with your actual endpoint
-    const form = document.forms['google-sheet'];
+    // Function to send a POST request to the FastAPI endpoint
+    function submitForm() {
+        const form = document.getElementById('contact-form');
+        const formData = new FormData(form);
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => {
-          alert("Thanks for Contacting us..! We Will Contact You Soon...");
-          form.reset(); // Reset the form
+        // Convert formData to a JSON object
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        fetch('http://localhost:8000/user/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set the content type to JSON
+            },
+            body: JSON.stringify(formDataObject), // Serialize the form data as JSON
         })
-        .catch(error => console.error('Error!', error.message));
+        .then(response => {
+            if (response.ok) {
+                // Success: Display a success message
+                alert("Thanks for contacting us. We will contact you soon.");
+                form.reset(); // Reset the form
+            } else {
+                // Error: Display an error message
+                alert("Something went wrong. Please try again later.");
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert("An error occurred. Please try again later.");
+        });
+    }
+
+    // Add an event listener to the form for the form submission
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        submitForm(); // Call the function to send the POST request
     });
 </script>
 
@@ -259,7 +283,7 @@ footer {
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
@@ -268,10 +292,10 @@ footer {
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script> -->
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+   
 </body>
 
 </html>
