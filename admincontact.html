@@ -81,43 +81,59 @@
     </table>
 </div>
 <!-- Include this script in your HTML file, preferably at the end of the body section -->
+<!-- Include this script in your HTML file, preferably at the end of the body section -->
 <script>
- // Function to fetch data from FastAPI endpoint
-async function fetchData() {
-    try {
-        const response = await fetch('http://localhost:8000/admin/show_contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            
-        });
-        console.log(response)
+    // Function to fetch data from FastAPI endpoint
+    async function fetchData() {
+        try {
+            const response = await fetch('/show_contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-
-        // Convert keys to lowercase
-        const lowercaseData = data.data.map(contact => {
-            const lowercaseContact = {};
-            for (const key in contact) {
-                if (contact.hasOwnProperty(key)) {
-                    lowercaseContact[key.toLowerCase()] = contact[key];
-                }
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-            return lowercaseContact;
-        });
 
-        return lowercaseData;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return [];
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return [];
+        }
     }
-}
 
+    // Function to populate the table with fetched data
+    async function populateTable() {
+        const contactData = await fetchData();
+
+        // Get the table body
+        const tableBody = document.querySelector('table tbody');
+
+        // Clear existing table rows
+        tableBody.innerHTML = '';
+
+        // Iterate through the fetched data and create table rows
+        contactData.forEach((contact, index) => {
+            const row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${contact.Name}</td>
+                    <td>${contact.Phone}</td>
+                    <td>${contact.Email}</td>
+                    <td>${contact.Message}</td>
+                </tr>
+            `;
+
+            // Append the row to the table body
+            tableBody.innerHTML += row;
+        });
+    }
+
+    // Call the populateTable function to fetch and populate data when the page loads
+    window.addEventListener('load', populateTable);
 </script>
 
 </body>
