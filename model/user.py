@@ -15,7 +15,6 @@ class Join(BaseModel):
     about: str = Field(..., description='Enter your message', example='dcfvgbhnj')
 
 
-
 class Donation(BaseModel):
     name:str = Field(...,description='Enter your Name',example='abcs')
     email:str = Field(...,description='Enter your email',example='abc@gmail.com')
