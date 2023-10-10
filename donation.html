@@ -91,14 +91,14 @@
       <!-- Page Header Start -->
       <br>
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">DONATION</h1>
+        <h1 class="display-3 text-uppercase text-white mb-3">About</h1>
     </div>
     <!-- Page Header Start -->
 
 
 <main>
     <div class="container">
-        <form action="#" method="POST">
+        <form class="contact-form bg-light p-5" id="donation-form" action="http://localhost:8000/user/donation" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -121,67 +121,109 @@
     </div>
 </main>
 <style>
-            main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 100px);
-        }
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
 
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-        }
+.container {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        select {
-            appearance: none;
-        }
+select {
+    appearance: none;
+}
 
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+button:hover {
+    background-color: #0056b3;
+}
 
-        footer {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
 
 </style>
+<script>
+    // Function to send a POST request to the FastAPI endpoint
+    function submitDonationForm() {
+        const form = document.getElementById('donation-form');
+        const formData = new FormData(form);
+
+        // Convert formData to a JSON object
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        fetch('/donate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set the content type to JSON
+            },
+            body: JSON.stringify(formDataObject), // Serialize the form data as JSON
+        })
+        .then(response => {
+            if (response.ok) {
+                // Success: Display a success message
+                alert("Thank you for your donation!");
+                form.reset(); // Reset the form
+            } else {
+                // Error: Display an error message
+                alert("Something went wrong. Please try again later.");
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert("An error occurred. Please try again later.");
+        });
+    }
+
+    // Add an event listener to the form for the form submission
+    document.getElementById('donation-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        submitDonationForm(); // Call the function to send the POST request
+    });
+</script>
+
 
 <!-- Footer Start -->
 <footer class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
