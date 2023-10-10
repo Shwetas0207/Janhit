@@ -9,7 +9,6 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,9 +19,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -102,15 +98,12 @@
 <!---join the janhit dal started-->
 <div class="container">
     <form class="join-form bg-light p-5" id="join" action="http://localhost:8000/user/join" method="POST">
-        <!-- <form class="join-form bg-light p-5" id="join-form" onsubmit="submitJoinForm(event);"> -->
-            <!-- <input type="submit" id="submitBtn" value="Submit"> -->
-
         <div class="row">
             <div class="col-25">
                 <label for="fname">First Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                <input type="text" id="fname" name="fname" placeholder="Your name..">
             </div>
         </div>
         <div class="row">
@@ -118,7 +111,7 @@
                 <label for="lname">Last Name</label>
             </div>
             <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <input type="text" id="lname" name="lname" placeholder="Your last name..">
             </div>
         </div>
         <div class="row">
@@ -135,9 +128,6 @@
             </div>
         </div>
         <div class="row">
-
-        </div>
-        <div class="row">
             <div class="col-25">
                 <label for="about">About</label>
             </div>
@@ -147,12 +137,53 @@
         </div>
 
         <div class="row">
-           <input type="submit" id="submitButton" value="Submit">
-
+            <input type="submit" id="submitButton" value="Submit">
         </div>
-        </form>
     </form>
 </div>
+
+<script>
+    // Function to send a POST request to the FastAPI endpoint
+    function submitForm() {
+        const form = document.getElementById('join'); // Change 'join' to match your form's ID
+        const formData = new FormData(form);
+
+        // Convert formData to a JSON object
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        fetch('http://localhost:8000/user/join', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set the content type to JSON
+            },
+            body: JSON.stringify(formDataObject), // Serialize the form data as JSON
+        })
+        .then(response => {
+            if (response.ok) {
+                // Success: Display a success message
+                alert("Thanks for joining. Your data has been submitted.");
+                form.reset(); // Reset the form
+            } else {
+                // Error: Display an error message
+                alert("Something went wrong. Please try again later.");
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error);
+            alert("An error occurred. Please try again later.");
+        });
+    }
+
+    // Add an event listener to the form for the form submission
+    document.getElementById('join').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        submitForm(); // Call the function to send the POST request
+    });
+</script>
+
 
 <style>
     /* Style inputs, select elements and textareas */
@@ -212,117 +243,7 @@
         }
     }
 </style>
-<script>
-    function submitJoinForm(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-        
-        // Get form data
-        const formData = new FormData(document.getElementById("join"));
-        
-        // Convert form data to a plain object
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
-        
-        // Send the data as JSON to your FastAPI endpoint
-        fetch("http://localhost:8000/user/join", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formDataObject)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                alert(data.error); // Handle errors if any
-            } else {
-                alert(data.message); // Handle success
-                // You can reset the form or redirect the user here
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }
-</script>
-<!-- <script>
-    function submitJoinForm(event) {
-        event.preventDefault(); // Prevent the default form submission behavior
-        
-        // Get form data
-        const formData = new FormData(document.getElementById("join-form"));
-        
-        // Convert form data to a plain object
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
-        
-        // Send the data as JSON to your FastAPI endpoint
-        fetch("http://localhost:8000/user/join", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formDataObject)
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.message); // Handle the response as needed
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }
-</script> -->
 
-<!-- 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('join-form');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(form);
-
-            // Convert form data to JSON
-            const jsonObject = {};
-            formData.forEach((value, key) => {
-                jsonObject[key] = value;
-            });
-            const jsonData = JSON.stringify(jsonObject);
-
-            // Send a POST request to your FastAPI endpoint
-            fetch('http://localhost:8000/user/join', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: jsonData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Handle success
-                    alert('Join request submitted successfully');
-                    form.reset();
-                } else {
-                    // Handle error
-                    alert('Join request failed');
-                }
-            })
-            .catch(error => {
-                // Handle network error
-                console.error('Error:', error);
-            });
-        });
-    });
-</> -->
-
-<!-- Rest of your HTML content -->
-<!--join the janhit dal End-->
 
 <br><br>
      <!-- Footer Start -->
@@ -435,19 +356,7 @@ footer {
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
 </body>
 
 </html>

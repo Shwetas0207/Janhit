@@ -9,10 +9,11 @@ class Contact(BaseModel):
     message:str = Field(...,description='Enter your message',example='hiiii')
 
 class Join(BaseModel):
-    fname:str = Field(...,description='Enter your First Name',example='Abcd')
-    lname:str = Field(...,description='Enter your Last Name',example='xyz')
-    gender:str = Field(...,description='Enter Your Gender',example='male/female')
-    about:str = Field(...,description='Enter your message',example='dcfvgbhnj')
+    fname: str = Field(..., description='Enter your First Name', example='Abcd')
+    lname: str = Field(..., description='Enter your Last Name', example='xyz')
+    gender: str = Field(..., description='Enter Your Gender (male/female/others)', example='male')
+    about: str = Field(..., description='Enter your message', example='dcfvgbhnj')
+
 
 
 class Donation(BaseModel):
