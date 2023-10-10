@@ -86,7 +86,7 @@
     // Function to fetch data from FastAPI endpoint
     async function fetchData() {
         try {
-            const response = await fetch('/show_contact', {
+            const response = await fetch('http://localhost:8000/admin/show_contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -137,3 +137,4 @@
 </script>
 
 </body>
+</html>

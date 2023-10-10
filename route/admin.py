@@ -14,3 +14,9 @@ async def cont():
     return JSONResponse({'data': data}, status_code=200)
 
 
+@router.post('/show_join')
+async def joi():
+    data = list(joindb.find({}, {'_id': 0}))
+    if not data:
+        return JSONResponse({'data': []}, status_code=200)
+    return JSONResponse({'data': data}, status_code=200)
