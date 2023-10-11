@@ -24,7 +24,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # Running the app with HTTPS support via Uvicorn
 if __name__ == "__main__":
     import uvicorn
