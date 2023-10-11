@@ -8,5 +8,5 @@ contactdb=db['contact']
 joindb=db['join']
 donationdb=db['donation']
 
-admin=db['admin']
+admindb=db['admin']
 
