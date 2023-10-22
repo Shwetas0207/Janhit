@@ -12,7 +12,7 @@ origins = [
     "http://localhost:8000",
     "https://localhost.com:8000",
     "https://127.0.0.1:8000",
-    "http://127.0.0.1:5500",  # Add the origin of your HTML file here
+    "http://127.0.0.1:5500", 
 ]
 
 
