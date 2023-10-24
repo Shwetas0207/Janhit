@@ -75,7 +75,7 @@
                     
                     <a href="team.html" class="nav-item nav-link">Team</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a> 
-                    <a href="Join.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Join Janhit Dal </a>
+                    <a href="Join.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Join Janhita Dal </a>
                     <a href="donation.html" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Donation</a>
                 </div>
             </div>
@@ -176,47 +176,7 @@ footer {
 }
 
 </style>
-<script>
-    // Function to send a POST request to the FastAPI endpoint
-    function submitDonationForm() {
-        const form = document.getElementById('donation-form');
-        const formData = new FormData(form);
 
-        // Convert formData to a JSON object
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
-
-        fetch('/donate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', // Set the content type to JSON
-            },
-            body: JSON.stringify(formDataObject), // Serialize the form data as JSON
-        })
-        .then(response => {
-            if (response.ok) {
-                // Success: Display a success message
-                alert("Thank you for your donation!");
-                form.reset(); // Reset the form
-            } else {
-                // Error: Display an error message
-                alert("Something went wrong. Please try again later.");
-            }
-        })
-        .catch(error => {
-            console.error('Error!', error);
-            alert("An error occurred. Please try again later.");
-        });
-    }
-
-    // Add an event listener to the form for the form submission
-    document.getElementById('donation-form').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        submitDonationForm(); // Call the function to send the POST request
-    });
-</script>
 
 
 <!-- Footer Start -->
