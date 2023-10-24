@@ -88,31 +88,84 @@
         </nav>
     </div> <!-- Navbar End -->
     <div class="container">
+        <button id="toggleButton">English</button>
+
         <div class="product-image">
             <h1>Bhimrao Ramji Ambedkar</h1>
             <img src="img/bhim.jpeg" alt="Bhimrao Ramji Ambedkar" width="300" height="400">
         </div>
-    
+
         <div class="product-details">
-            <h2>Description</h2>
-            <p>Bhimrao Ramji Ambedkar, popularly known as Dr. B.R. Ambedkar, was a prominent Indian jurist, social reformer, and the chief architect of the Indian Constitution. He dedicated his life to advocating for the rights and dignity of the marginalized sections of society.</p>
-    
-            <h2>Key Aspects of Dr. B.R. Ambedkar's Legacy</h2>
-            <ul>
-                <li>Social Reform: Dr. Ambedkar was a staunch advocate for social reform and the upliftment of the oppressed classes.</li>
-                <li>Constitutional Architect: He played a pivotal role in drafting the Indian Constitution, ensuring equality and social justice for all citizens.</li>
-                <li>Leader of the Dalits: Dr. Ambedkar was a prominent leader of the Dalits (formerly known as untouchables) and fought against caste-based discrimination.</li>
-                <li>Education Advocate: He emphasized the importance of education as a means to empower the marginalized communities.</li>
-                <li>Human Rights: Dr. Ambedkar championed human rights and worked to eradicate social inequalities.</li>
-                <li>Conversion to Buddhism: He embraced Buddhism, along with millions of followers, as a path to escape the caste system and discrimination.</li>
-                <li>Legacy of Empowerment: Dr. B.R. Ambedkar's legacy continues to inspire social justice movements and marginalized communities worldwide.</li>
-            </ul>
+            <div class="english-content">
+                <h2>Description</h2>
+                <p>Bhimrao Ramji Ambedkar, popularly known as Dr. B.R. Ambedkar, was a prominent Indian jurist, social reformer, and the chief architect of the Indian Constitution. He dedicated his life to advocating for the rights and dignity of the marginalized sections of society.</p>
+
+                <h2>Key Aspects of Dr. B.R. Ambedkar's Legacy</h2>
+                <ul>
+                    <li>Social Reform: Dr. Ambedkar was a staunch advocate for social reform and the upliftment of the oppressed classes.</li>
+                    <li>Constitutional Architect: He played a pivotal role in drafting the Indian Constitution, ensuring equality and social justice for all citizens.</li>
+                    <li>Leader of the Dalits: Dr. Ambedkar was a prominent leader of the Dalits (formerly known as untouchables) and fought against caste-based discrimination.</li>
+                    <li>Education Advocate: He emphasized the importance of education as a means to empower the marginalized communities.</li>
+                    <li>Human Rights: Dr. Ambedkar championed human rights and worked to eradicate social inequalities.</li>
+                    <li>Conversion to Buddhism: He embraced Buddhism, along with millions of followers, as a path to escape the caste system and discrimination.</li>
+                    <li>Legacy of Empowerment: Dr. B.R. Ambedkar's legacy continues to inspire social justice movements and marginalized communities worldwide.</li>
+                </ul>
+            </div>
+
+            <div class="hindi-content">
+                <h2>विवरण</h2>
+                <p>भीमराव रामजी अंबेडकर, जिन्हें डॉ. बी.आर. अंबेडकर के नाम से प्रसिद्ध जाना जाता है, भारतीय संविधान के मुख्य योजक, भारतीय न्यायिक, सामाजिक सुधारक थे। उन्होंने अपना जीवन विभिन्न समाज के वर्गों के अधिकारों और मर्जी की प्रमोशन के लिए समर्पित किया।</p>
+
+                <h2>डॉ. बी.आर. अंबेडकर की विरासत के मुख्य पहलू</h2>
+                <ul>
+                    <li>सामाजिक सुधार: डॉ. अंबेडकर सामाजिक सुधार के बीरती समर्थक थे और दलित वर्ग की उन्नति के लिए आवाज उठाते थे।</li>
+                    <li>संविधान निर्माता: उन्होंने भारतीय संविधान का मूख्य निर्माता बनकर सभी नागरिकों के लिए समानता और सामाजिक न्याय सुनिश्चित करने में महत्वपूर्ण भूमिका निभाई।</li>
+                    <li>दलितों के नेता: डॉ. अंबेडकर दलितों (पहले के रूप में अंटचेबल्स के रूप में जाने जाने वाले) के प्रमुख नेता थे और जाति आधारित भेदभाव के खिलाफ लड़े।</li>
+                    <li>शिक्षा प्रचारक: उन्होंने शिक्षा के महत्व को सामाजिक समुदायों को सशक्ति प्रदान करने का माध्यम के रूप में दरकिन दिया।</li>
+                    <li>मानव अधिकार: डॉ. अंबेडकर ने मानव अधिकारों का समर्थन किया और सामाजिक असमानता को समाप्त करने के लिए काम किया।</li>
+                    <li>बौद्ध धर्म में परिवर्तन: उन्होंने बौद्ध धर्म को ग्रहण किया, जैसे की अनगिनत अनुयायियों के साथ, जाति व्यवस्था और भेदभाव से बचने का एक मार्ग माना।</li>
+                    <li>सशक्तिकरण की विरासत: डॉ. बी.आर. अंबेडकर की विरासत आज भी समाजिक न्याय आंदोलनों और विभिन्न समुदायों को प्रेरित करती है।</li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const englishContent = document.querySelector(".english-content");
+        const hindiContent = document.querySelector(".hindi-content");
+
+        toggleButton.addEventListener("click", function () {
+            if (toggleButton.textContent === "English") {
+                toggleButton.textContent = "हिन्दी";
+                englishContent.style.display = "none";
+                hindiContent.style.display = "block";
+            } else {
+                toggleButton.textContent = "English";
+                hindiContent.style.display = "none";
+                englishContent.style.display = "block";
+            }
+        });
+    </script>
     
     <br><br>
     <style>
 /* Style the product container */
+.hindi-content {
+    display: none;
+}
+
+#toggleButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    cursor: pointer;
+    border-radius: 15px; /* Rounded corners for a switch-like appearance */
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for both background color and transform */
+}
+
+
 .container {
     max-width: 800px;
     margin: 0 auto;

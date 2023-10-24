@@ -91,31 +91,84 @@
     </div><!-- Navbar End -->
 
     <div class="container">
+        <button id="toggleButton">English</button>
+    
         <div class="product-image">
             <h1>Rani Lakshmibai</h1>
             <img src="img/rani.jpeg" alt="Rani Lakshmibai" width="300" height="400">
         </div>
     
         <div class="product-details">
-            <h2>Description</h2>
-            <p>Rani Lakshmibai, also known as the "Warrior Queen of Jhansi," was a courageous and iconic figure in the Indian freedom struggle against British colonial rule during the 19th century.</p>
+            <div class="english-content">
+                <h2>Description</h2>
+                <p>Rani Lakshmibai, also known as the "Warrior Queen of Jhansi," was a courageous and iconic figure in the Indian freedom struggle against British colonial rule during the 19th century.</p>
     
-            <h2>Key Aspects of Rani Lakshmibai's Legacy</h2>
-            <ul>
-                <li>Warrior Queen: Rani Lakshmibai was a fearless warrior who led her troops into battle during the Indian Rebellion of 1857.</li>
-                <li>Defender of Jhansi: She fiercely defended the princely state of Jhansi against British forces.</li>
-                <li>Icon of Resistance: Her bravery and determination made her an iconic symbol of resistance against colonial oppression.</li>
-                <li>Leadership: Rani Lakshmibai's leadership and military skills earned her the respect of her followers.</li>
-                <li>Women's Rights: She advocated for the rights and freedom of women in society.</li>
-                <li>Sacrifice: Her ultimate sacrifice in battle is a testament to her commitment to India's freedom.</li>
-                <li>Inspiration: Rani Lakshmibai continues to inspire people, especially women, to stand up for their rights and principles.</li>
-            </ul>
+                <h2>Key Aspects of Rani Lakshmibai's Legacy</h2>
+                <ul>
+                    <li>Warrior Queen: Rani Lakshmibai was a fearless warrior who led her troops into battle during the Indian Rebellion of 1857.</li>
+                    <li>Defender of Jhansi: She fiercely defended the princely state of Jhansi against British forces.</li>
+                    <li>Icon of Resistance: Her bravery and determination made her an iconic symbol of resistance against colonial oppression.</li>
+                    <li>Leadership: Rani Lakshmibai's leadership and military skills earned her the respect of her followers.</li>
+                    <li>Women's Rights: She advocated for the rights and freedom of women in society.</li>
+                    <li>Sacrifice: Her ultimate sacrifice in battle is a testament to her commitment to India's freedom.</li>
+                    <li>Inspiration: Rani Lakshmibai continues to inspire people, especially women, to stand up for their rights and principles.</li>
+                </ul>
+            </div>
+    
+            <div class="hindi-content" style="display: none;">
+                <h2>विवरण</h2>
+                <p>रानी लक्ष्मीबाई, जिन्हें "झांसी की योद्धा रानी" के नाम से भी जाना जाता है, भारतीय स्वतंत्रता संघर्ष में ब्रिटिश औपचारिक शासन के खिलाफ 19वीं सदी के दौरान साहसी और प्रतीकात्मक आदर्श थीं।</p>
+                <h2>रानी लक्ष्मीबाई के योगदान के प्रमुख पहलू</h2>
+                <ul>
+                    <li>योद्धा रानी: रानी लक्ष्मीबाई एक डरपोक योद्धा थीं जो 1857 के भारतीय विद्रोह के दौरान अपनी सेना का सैन्यागत करने में आगे आईं।</li>
+                    <li>झांसी की रक्षिता: उन्होंने ब्रिटिश बलिदानों के खिलाफ झांसी के रियासत की खटियों में सख्त रूप से रक्षा की।</li>
+                    <li>प्रतिरोध का प्रतीक: उनका साहस और दृढ़ संकल्प उन्हें औपचारिक उत्पीड़न के खिलाफ प्रतिरोध के प्रतीकात्मक प्रतीक बना दिया।</li>
+                    <li>नेतृत्व: रानी लक्ष्मीबाई का नेतृत्व और सैन्य योग्यता उन्हें उनके अनुयायों का सम्मान दिलाया।</li>
+                    <li>महिला अधिकार: उन्होंने समाज में महिलाओं के अधिकार और स्वतंत्रता के लिए समर्थन दिया।</li>
+                    <li>बलिदान: उनका आखिरी बलिदान युद्ध में उनकी भारत की स्वतंत्रता के प्रति उनकी प्रतिबद्धता का प्रमाण है।</li>
+                    <li>प्रेरणा: रानी लक्ष्मीबाई आज भी लोगों को, खासकर महिलाओं को, अपने अधिकारों और सिद्धांतों के लिए उठने के लिए प्रेरित करती हैं।</li>
+                </ul>
+            </div>
         </div>
     </div>
-        
+    
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const englishContent = document.querySelector(".english-content");
+        const hindiContent = document.querySelector(".hindi-content");
+
+        toggleButton.addEventListener("click", function () {
+            if (toggleButton.textContent === "English") {
+                toggleButton.textContent = "हिन्दी";
+                englishContent.style.display = "none";
+                hindiContent.style.display = "block";
+            } else {
+                toggleButton.textContent = "English";
+                hindiContent.style.display = "none";
+                englishContent.style.display = "block";
+            }
+        });
+    </script>
+
+
+
     <br><br>
     <style>
 /* Style the product container */
+.hindi-content {
+    display: none;
+}
+
+#toggleButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    cursor: pointer;
+    border-radius: 15px; /* Rounded corners for a switch-like appearance */
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for both background color and transform */
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;

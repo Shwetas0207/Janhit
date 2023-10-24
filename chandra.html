@@ -88,33 +88,83 @@
         </nav>
     </div> <!-- Navbar End -->
    
-    <div class="container">
-        <div class="product-image">
-            <h1>Chandra Shekhar Azad</h1>
-            <img src="img/chandr.jpeg" alt="Chandra Shekhar Azad" width="300" height="400">
-        </div>
+    <body>
+        <div class="container">
+            <button id="toggleButton">English</button>
     
-        <div class="product-details">
-            <h2>Description</h2>
-            <p>Chandra Shekhar Azad, born as Chandra Shekhar Tiwari, was a fearless Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule during the early 20th century.</p>
+            <div class="product-image">
+                <h1>Chandra Shekhar Azad</h1>
+                <img src="img/chandr.jpeg" alt="Chandra Shekhar Azad" width="300" height="400">
+            </div>
     
-            <h2>Key Aspects of Chandra Shekhar Azad's Legacy</h2>
-            <ul>
-                <li>Fearless Revolutionary: Azad was known for his unyielding commitment to the cause of freedom and his fearlessness in the face of British oppression.</li>
-                <li>Secretive Life: He lived a secretive life, constantly evading British authorities and earning the nickname "Azad," which means "free."</li>
-                <li>Master of Disguise: Azad was a master of disguise and used various pseudonyms to avoid detection.</li>
-                <li>Role in Kakori Conspiracy: He was a key figure in the Kakori Conspiracy, a daring train robbery carried out by revolutionaries to fund the freedom struggle.</li>
-                <li>Inspiration: Chandra Shekhar Azad's life and sacrifice continue to inspire generations of Indians to fight for freedom and justice.</li>
-                <li>Martyrdom: He chose to die by suicide rather than surrender to the British, remaining true to his commitment to never be captured alive.</li>
-            </ul>
+            <div class="product-details">
+                <div class="english-content">
+                    <h2>Description</h2>
+                    <p>Chandra Shekhar Azad, born as Chandra Shekhar Tiwari, was a fearless Indian revolutionary and freedom fighter who played a significant role in the struggle for India's independence from British colonial rule during the early 20th century.</p>
+    
+                    <h2>Key Aspects of Chandra Shekhar Azad's Legacy</h2>
+                    <ul>
+                        <li>Fearless Revolutionary: Azad was known for his unyielding commitment to the cause of freedom and his fearlessness in the face of British oppression.</li>
+                        <li>Secretive Life: He lived a secretive life, constantly evading British authorities and earning the nickname "Azad," which means "free."</li>
+                        <li>Master of Disguise: Azad was a master of disguise and used various pseudonyms to avoid detection.</li>
+                        <li>Role in Kakori Conspiracy: He was a key figure in the Kakori Conspiracy, a daring train robbery carried out by revolutionaries to fund the freedom struggle.</li>
+                        <li>Inspiration: Chandra Shekhar Azad's life and sacrifice continue to inspire generations of Indians to fight for freedom and justice.</li>
+                        <li>Martyrdom: He chose to die by suicide rather than surrender to the British, remaining true to his commitment to never be captured alive.</li>
+                    </ul>
+                </div>
+    
+                <div class="hindi-content" style="display: none;">
+                    <h2>विवरण</h2>
+                    <p>चंद्र शेखर आज़ाद, जिनका जन्म चंद्र शेखर तिवारी के नाम से हुआ था, एक डरपोकी हिन्दुस्तानी क्रांतिकारी और स्वतंत्रता सेनानी थे, जिन्होंने 20वीं सदी के प्रारंभ में ब्रिटिश औपचारिक शासन से भारत की स्वतंत्रता के लिए महत्वपूर्ण भूम</p>
+                    <h2>चंद्र शेखर आज़ाद के दोषयान के प्रमुख पहलू</h2>
+                <ul>
+                    <li>निर्भीक क्रांतिकारी: आज़ाद का स्वतंत्रता के पक्ष में अटल समर्पण और ब्रिटिश अत्याचार के सामने उनकी निर्भीकता के लिए जाने जाता था।</li>
+                    <li>रहस्यमय जीवन: उन्होंने एक रहस्यमय जीवन बिताया, निरंतर ब्रिटिश प्राधिकृतियों से बचकर और "आज़ाद" की उपनाम प्राप्त किया, जिसका अर्थ होता है "स्वतंत्र"।</li>
+                    <li>परिधान का माहिर: आज़ाद परिधान के माहिर थे और पहचान से बचने के लिए विभिन्न उपनामों का उपयोग करते थे।</li>
+                    <li>काकोरी साजिश में भूमिका: वे काकोरी साजिश में महत्वपूर्ण व्यक्ति थे, जिसमें क्रांतिकारी ने स्वतंत्रता संघर्ष को वित्तपोषण करने के लिए डेरिंग ट्रेन की डकैती की।</li>
+                    <li>प्रेरणा: चंद्र शेखर आज़ाद का जीवन और त्याग आज भारतीयों को स्वतंत्रता और न्याय के लिए लड़ने के लिए प्रेरित करता है।</li>
+                    <li>शहादत: उन्होंने ब्रिटिश के समर्पण से बचने की बजाय आत्महत्या करने का चयन किया, और उनकी प्रतिबद्धता के साथ कभी भी जीवा
+                </ul>
+            </div>
         </div>
     </div>
-    
+
+    <script>
+        const toggleButton = document.getElementById("toggleButton");
+        const englishContent = document.querySelector(".english-content");
+        const hindiContent = document.querySelector(".hindi-content");
+
+        toggleButton.addEventListener("click", function () {
+            if (toggleButton.textContent === "English") {
+                toggleButton.textContent = "हिन्दी";
+                englishContent.style.display = "none";
+                hindiContent.style.display = "block";
+            } else {
+                toggleButton.textContent = "English";
+                hindiContent.style.display = "none";
+                englishContent.style.display = "block";
+            }
+        });
+    </script>
 
 
     <br><br>
     <style>
 /* Style the product container */
+.hindi-content {
+    display: none;
+}
+
+#toggleButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    cursor: pointer;
+    border-radius: 15px; /* Rounded corners for a switch-like appearance */
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for both background color and transform */
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
